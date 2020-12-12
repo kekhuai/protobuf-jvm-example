@@ -2,8 +2,9 @@ plugins {
     application
     idea
     eclipse
-    kotlin("jvm") version "1.4.10"
     java
+    kotlin("jvm") version "1.4.10"
+    id("net.researchgate.release") version "2.8.1"
 }
 
 group = "com.nexterditigals.nextershop"
