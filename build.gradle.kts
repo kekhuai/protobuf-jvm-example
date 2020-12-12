@@ -8,7 +8,7 @@ plugins {
     `maven-publish`
 }
 
-group = "com.nexterditigals.nextershop"
+group = "com.nexterditigal.nextershop"
 java {
     sourceCompatibility = JavaVersion.VERSION_14
 }
@@ -39,15 +39,27 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
 
 val version: String by project
 val projectVersion = version
+val usr: String by project
+val pwd: String by project
 
 publishing {
     publications {
         create<MavenPublication>("maven") {
-            groupId = "com.nexterdigitals.nextershop"
+            groupId = "com.nexterdigital.nextershop"
             artifactId = "pb"
             version = projectVersion
 
             from(components["java"])
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username = usr
+                password = pwd
+            }
+
+            url = uri("https://repo.repsy.io/mvn/kekhuay/nexterdigital")
         }
     }
 }
