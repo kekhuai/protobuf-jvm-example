@@ -17,9 +17,10 @@ plugins {
     `maven-publish`
 }
 
-group = "com.nexterditigal.nextershop"
+group = "com.nexterdigital.nextershop"
 java {
     sourceCompatibility = JavaVersion.VERSION_14
+    withSourcesJar()
 }
 
 repositories {
