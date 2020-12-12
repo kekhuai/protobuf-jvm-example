@@ -30,4 +30,6 @@ jobs:
 
       - name: Bump project version
         run: |
+          git config user.email kekhuay@users.noreply.github.com
+          git config user.name 'Natthaphon Phanit'
           ./gradlew clean release -Prelease.useAutomaticVersion=true -Pusr=${{ secrets.REPSY_NEXTER_DIGITAL_REPOSITORY_USERNAME }} -Ppwd=${{ secrets.REPSY_NEXTER_DIGITAL_REPOSITORY_PASSWORD }}
