@@ -5,10 +5,10 @@ plugins {
     java
     kotlin("jvm") version "1.4.10"
     id("net.researchgate.release") version "2.8.1"
+    `maven-publish`
 }
 
 group = "com.nexterditigals.nextershop"
-version = "0.0.1"
 java {
     sourceCompatibility = JavaVersion.VERSION_14
 }
@@ -34,5 +34,20 @@ tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "14"
+    }
+}
+
+val version: String by project
+val projectVersion = version
+
+publishing {
+    publications {
+        create<MavenPublication>("maven") {
+            groupId = "com.nexterdigitals.nextershop"
+            artifactId = "pb"
+            version = projectVersion
+
+            from(components["java"])
+        }
     }
 }
