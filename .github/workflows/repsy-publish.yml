@@ -30,4 +30,4 @@ jobs:
 
       - name: Bump project version
         run: |
-          ./gradlew clean release -Prelease.useAutomaticVersion=true
+          ./gradlew clean release -Prelease.useAutomaticVersion=true -Pusr=${{ secret.REPSY_NEXTER_DIGITAL_REPOSITORY_USERNAME }} -Ppwd=${{ secret.REPSY_NEXTER_DIGITAL_REPOSITORY_PASSWORD }}
