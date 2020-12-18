@@ -5,6 +5,7 @@ val pwd: String by project
 val protobufJavaVersion = "3.14.0"
 val grpcKotlinStubVersion = "0.2.1"
 val grpcStubVersion = "1.34.0"
+val grpcReactorStubVersion = "1.0.1"
 val javaxAnnotationApiVersion = "1.3.2"
 
 plugins {
@@ -33,6 +34,7 @@ dependencies {
     implementation("io.grpc:grpc-stub:$grpcStubVersion")
     implementation("javax.annotation:javax.annotation-api:$javaxAnnotationApiVersion")
     api("io.grpc:grpc-kotlin-stub:$grpcKotlinStubVersion")
+    api("com.salesforce.servicelibs:reactor-grpc-stub:$grpcReactorStubVersion")
 }
 
 sourceSets["main"].java {
