@@ -38,6 +38,7 @@ dependencies {
 sourceSets["main"].java {
     srcDir("src/main/grpc")
     srcDir("src/main/grpckt")
+    srcDir("src/main/reactor")
 }
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
