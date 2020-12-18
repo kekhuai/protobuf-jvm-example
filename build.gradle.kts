@@ -30,9 +30,9 @@ repositories {
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("com.google.protobuf:protobuf-java:$protobufJavaVersion")
-    implementation("io.grpc:grpc-kotlin-stub:$grpcKotlinStubVersion")
     implementation("io.grpc:grpc-stub:$grpcStubVersion")
     implementation("javax.annotation:javax.annotation-api:$javaxAnnotationApiVersion")
+    api("io.grpc:grpc-kotlin-stub:$grpcKotlinStubVersion")
 }
 
 sourceSets["main"].java {
