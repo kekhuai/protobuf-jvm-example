@@ -94,17 +94,17 @@ private static final long serialVersionUID = 0L;
             com.nexterdigital.nextershop.pb.uploadedfile.Response.class, com.nexterdigital.nextershop.pb.uploadedfile.Response.Builder.class);
   }
 
-  public static final int UPLOADEDFILES_FIELD_NUMBER = 1;
+  public static final int UPLOADED_FILES_FIELD_NUMBER = 1;
   private java.util.List<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> uploadedFiles_;
   /**
-   * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+   * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
    */
   @java.lang.Override
   public java.util.List<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getUploadedFilesList() {
     return uploadedFiles_;
   }
   /**
-   * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+   * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileOrBuilder> 
@@ -112,21 +112,21 @@ private static final long serialVersionUID = 0L;
     return uploadedFiles_;
   }
   /**
-   * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+   * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
    */
   @java.lang.Override
   public int getUploadedFilesCount() {
     return uploadedFiles_.size();
   }
   /**
-   * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+   * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
    */
   @java.lang.Override
   public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile getUploadedFiles(int index) {
     return uploadedFiles_.get(index);
   }
   /**
-   * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+   * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
    */
   @java.lang.Override
   public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileOrBuilder getUploadedFilesOrBuilder(
@@ -193,7 +193,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     if (getUploadedFilesCount() > 0) {
-      hash = (37 * hash) + UPLOADEDFILES_FIELD_NUMBER;
+      hash = (37 * hash) + UPLOADED_FILES_FIELD_NUMBER;
       hash = (53 * hash) + getUploadedFilesList().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
@@ -489,7 +489,7 @@ private static final long serialVersionUID = 0L;
         com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileOrBuilder> uploadedFilesBuilder_;
 
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public java.util.List<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getUploadedFilesList() {
       if (uploadedFilesBuilder_ == null) {
@@ -499,7 +499,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public int getUploadedFilesCount() {
       if (uploadedFilesBuilder_ == null) {
@@ -509,7 +509,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile getUploadedFiles(int index) {
       if (uploadedFilesBuilder_ == null) {
@@ -519,7 +519,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder setUploadedFiles(
         int index, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile value) {
@@ -536,7 +536,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder setUploadedFiles(
         int index, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder builderForValue) {
@@ -550,7 +550,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder addUploadedFiles(com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile value) {
       if (uploadedFilesBuilder_ == null) {
@@ -566,7 +566,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder addUploadedFiles(
         int index, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile value) {
@@ -583,7 +583,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder addUploadedFiles(
         com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder builderForValue) {
@@ -597,7 +597,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder addUploadedFiles(
         int index, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder builderForValue) {
@@ -611,7 +611,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder addAllUploadedFiles(
         java.lang.Iterable<? extends com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> values) {
@@ -626,7 +626,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder clearUploadedFiles() {
       if (uploadedFilesBuilder_ == null) {
@@ -639,7 +639,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public Builder removeUploadedFiles(int index) {
       if (uploadedFilesBuilder_ == null) {
@@ -652,14 +652,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder getUploadedFilesBuilder(
         int index) {
       return getUploadedFilesFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileOrBuilder getUploadedFilesOrBuilder(
         int index) {
@@ -669,7 +669,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public java.util.List<? extends com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileOrBuilder> 
          getUploadedFilesOrBuilderList() {
@@ -680,14 +680,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder addUploadedFilesBuilder() {
       return getUploadedFilesFieldBuilder().addBuilder(
           com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.getDefaultInstance());
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder addUploadedFilesBuilder(
         int index) {
@@ -695,7 +695,7 @@ private static final long serialVersionUID = 0L;
           index, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.getDefaultInstance());
     }
     /**
-     * <code>repeated .uploadedfile.v1.UploadedFile uploadedFiles = 1;</code>
+     * <code>repeated .uploadedfile.v1.UploadedFile uploaded_files = 1;</code>
      */
     public java.util.List<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.Builder> 
          getUploadedFilesBuilderList() {

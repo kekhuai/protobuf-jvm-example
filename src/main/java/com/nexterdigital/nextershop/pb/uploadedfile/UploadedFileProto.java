@@ -36,13 +36,13 @@ public final class UploadedFileProto {
       "\n\023uploaded_file.proto\022\017uploadedfile.v1\032\033" +
       "google/protobuf/empty.proto\"R\n\014UploadedF" +
       "ile\022\n\n\002id\030\001 \001(\t\022\016\n\006source\030\002 \001(\t\022\022\n\ncreat" +
-      "ed_at\030\003 \001(\004\022\022\n\nupdated_at\030\004 \001(\004\"@\n\010Respo" +
-      "nse\0224\n\ruploadedFiles\030\001 \003(\0132\035.uploadedfil" +
-      "e.v1.UploadedFile2R\n\023UploadedFileService" +
-      "\022;\n\004init\022\026.google.protobuf.Empty\032\031.uploa" +
-      "dedfile.v1.Response\"\000BC\n,com.nexterdigit" +
-      "al.nextershop.pb.uploadedfileB\021UploadedF" +
-      "ileProtoP\001b\006proto3"
+      "ed_at\030\003 \001(\004\022\022\n\nupdated_at\030\004 \001(\004\"A\n\010Respo" +
+      "nse\0225\n\016uploaded_files\030\001 \003(\0132\035.uploadedfi" +
+      "le.v1.UploadedFile2R\n\023UploadedFileServic" +
+      "e\022;\n\004init\022\026.google.protobuf.Empty\032\031.uplo" +
+      "adedfile.v1.Response\"\000BC\n,com.nexterdigi" +
+      "tal.nextershop.pb.uploadedfileB\021Uploaded" +
+      "FileProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
