@@ -28,15 +28,19 @@ public final class UploadedFileProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\023uploaded_file.proto\022\017uploadedfile.v1\"R" +
-      "\n\014UploadedFile\022\n\n\002id\030\001 \001(\t\022\016\n\006source\030\002 \001" +
-      "(\t\022\022\n\ncreated_at\030\003 \001(\004\022\022\n\nupdated_at\030\004 \001" +
-      "(\004BC\n,com.nexterdigital.nextershop.pb.up" +
-      "loadedfileB\021UploadedFileProtoP\001b\006proto3"
+      "\n\023uploaded_file.proto\022\017uploadedfile.v1\032\033" +
+      "google/protobuf/empty.proto\"R\n\014UploadedF" +
+      "ile\022\n\n\002id\030\001 \001(\t\022\016\n\006source\030\002 \001(\t\022\022\n\ncreat" +
+      "ed_at\030\003 \001(\004\022\022\n\nupdated_at\030\004 \001(\0042V\n\023Uploa" +
+      "dedFileService\022?\n\004init\022\026.google.protobuf" +
+      ".Empty\032\035.uploadedfile.v1.UploadedFile\"\000B" +
+      "C\n,com.nexterdigital.nextershop.pb.uploa" +
+      "dedfileB\021UploadedFileProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.google.protobuf.EmptyProto.getDescriptor(),
         });
     internal_static_uploadedfile_v1_UploadedFile_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -44,6 +48,7 @@ public final class UploadedFileProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_uploadedfile_v1_UploadedFile_descriptor,
         new java.lang.String[] { "Id", "Source", "CreatedAt", "UpdatedAt", });
+    com.google.protobuf.EmptyProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
