@@ -30,7 +30,7 @@ object UploadedFileServiceGrpcKt {
   val serviceDescriptor: ServiceDescriptor
     get() = UploadedFileServiceGrpc.getServiceDescriptor()
 
-  val initMethod: MethodDescriptor<Empty, UploadedFile>
+  val initMethod: MethodDescriptor<Empty, Response>
     @JvmStatic
     get() = UploadedFileServiceGrpc.getInitMethod()
 
@@ -57,7 +57,7 @@ object UploadedFileServiceGrpcKt {
      *
      * @return The single response from the server.
      */
-    suspend fun init(request: Empty): UploadedFile = unaryRpc(
+    suspend fun init(request: Empty): Response = unaryRpc(
       channel,
       UploadedFileServiceGrpc.getInitMethod(),
       request,
@@ -83,7 +83,7 @@ object UploadedFileServiceGrpcKt {
      *
      * @param request The request from the client.
      */
-    open suspend fun init(request: Empty): UploadedFile = throw
+    open suspend fun init(request: Empty): Response = throw
         StatusException(UNIMPLEMENTED.withDescription("Method uploadedfile.v1.UploadedFileService.init is unimplemented"))
 
     final override fun bindService(): ServerServiceDefinition = builder(getServiceDescriptor())

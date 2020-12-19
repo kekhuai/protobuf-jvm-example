@@ -28,28 +28,28 @@ public final class UploadedFileServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getInitMethod;
+      com.nexterdigital.nextershop.pb.uploadedfile.Response> getInitMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "init",
       requestType = com.google.protobuf.Empty.class,
-      responseType = com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.class,
+      responseType = com.nexterdigital.nextershop.pb.uploadedfile.Response.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.google.protobuf.Empty,
-      com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getInitMethod() {
-    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getInitMethod;
+      com.nexterdigital.nextershop.pb.uploadedfile.Response> getInitMethod() {
+    io.grpc.MethodDescriptor<com.google.protobuf.Empty, com.nexterdigital.nextershop.pb.uploadedfile.Response> getInitMethod;
     if ((getInitMethod = UploadedFileServiceGrpc.getInitMethod) == null) {
       synchronized (UploadedFileServiceGrpc.class) {
         if ((getInitMethod = UploadedFileServiceGrpc.getInitMethod) == null) {
           UploadedFileServiceGrpc.getInitMethod = getInitMethod =
-              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>newBuilder()
+              io.grpc.MethodDescriptor.<com.google.protobuf.Empty, com.nexterdigital.nextershop.pb.uploadedfile.Response>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "init"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.google.protobuf.Empty.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.getDefaultInstance()))
+                  com.nexterdigital.nextershop.pb.uploadedfile.Response.getDefaultInstance()))
               .setSchemaDescriptor(new UploadedFileServiceMethodDescriptorSupplier("init"))
               .build();
         }
@@ -109,7 +109,7 @@ public final class UploadedFileServiceGrpc {
     /**
      */
     public void init(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> responseObserver) {
+        io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.Response> responseObserver) {
       asyncUnimplementedUnaryCall(getInitMethod(), responseObserver);
     }
 
@@ -120,7 +120,7 @@ public final class UploadedFileServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 com.google.protobuf.Empty,
-                com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>(
+                com.nexterdigital.nextershop.pb.uploadedfile.Response>(
                   this, METHODID_INIT)))
           .build();
     }
@@ -143,7 +143,7 @@ public final class UploadedFileServiceGrpc {
     /**
      */
     public void init(com.google.protobuf.Empty request,
-        io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> responseObserver) {
+        io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.Response> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getInitMethod(), getCallOptions()), request, responseObserver);
     }
@@ -165,7 +165,7 @@ public final class UploadedFileServiceGrpc {
 
     /**
      */
-    public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile init(com.google.protobuf.Empty request) {
+    public com.nexterdigital.nextershop.pb.uploadedfile.Response init(com.google.protobuf.Empty request) {
       return blockingUnaryCall(
           getChannel(), getInitMethod(), getCallOptions(), request);
     }
@@ -187,7 +187,7 @@ public final class UploadedFileServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> init(
+    public com.google.common.util.concurrent.ListenableFuture<com.nexterdigital.nextershop.pb.uploadedfile.Response> init(
         com.google.protobuf.Empty request) {
       return futureUnaryCall(
           getChannel().newCall(getInitMethod(), getCallOptions()), request);
@@ -215,7 +215,7 @@ public final class UploadedFileServiceGrpc {
       switch (methodId) {
         case METHODID_INIT:
           serviceImpl.init((com.google.protobuf.Empty) request,
-              (io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.Response>) responseObserver);
           break;
         default:
           throw new AssertionError();
