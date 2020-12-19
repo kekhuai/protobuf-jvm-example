@@ -32,14 +32,32 @@ public interface UploadedFileOrBuilder extends
       getSourceBytes();
 
   /**
-   * <code>uint64 created_at = 3;</code>
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return The createdAt.
    */
-  long getCreatedAt();
+  com.google.protobuf.Timestamp getCreatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>uint64 updated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+   * @return Whether the updatedAt field is set.
+   */
+  boolean hasUpdatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
    * @return The updatedAt.
    */
-  long getUpdatedAt();
+  com.google.protobuf.Timestamp getUpdatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 }

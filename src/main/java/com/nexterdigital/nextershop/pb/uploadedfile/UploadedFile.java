@@ -62,14 +62,30 @@ private static final long serialVersionUID = 0L;
             source_ = s;
             break;
           }
-          case 24: {
+          case 26: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (createdAt_ != null) {
+              subBuilder = createdAt_.toBuilder();
+            }
+            createdAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(createdAt_);
+              createdAt_ = subBuilder.buildPartial();
+            }
 
-            createdAt_ = input.readUInt64();
             break;
           }
-          case 32: {
+          case 34: {
+            com.google.protobuf.Timestamp.Builder subBuilder = null;
+            if (updatedAt_ != null) {
+              subBuilder = updatedAt_.toBuilder();
+            }
+            updatedAt_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+            if (subBuilder != null) {
+              subBuilder.mergeFrom(updatedAt_);
+              updatedAt_ = subBuilder.buildPartial();
+            }
 
-            updatedAt_ = input.readUInt64();
             break;
           }
           default: {
@@ -181,25 +197,55 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int CREATED_AT_FIELD_NUMBER = 3;
-  private long createdAt_;
+  private com.google.protobuf.Timestamp createdAt_;
   /**
-   * <code>uint64 created_at = 3;</code>
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * @return Whether the createdAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreatedAt() {
+    return createdAt_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
    * @return The createdAt.
    */
   @java.lang.Override
-  public long getCreatedAt() {
-    return createdAt_;
+  public com.google.protobuf.Timestamp getCreatedAt() {
+    return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+    return getCreatedAt();
   }
 
   public static final int UPDATED_AT_FIELD_NUMBER = 4;
-  private long updatedAt_;
+  private com.google.protobuf.Timestamp updatedAt_;
   /**
-   * <code>uint64 updated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+   * @return Whether the updatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdatedAt() {
+    return updatedAt_ != null;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
    * @return The updatedAt.
    */
   @java.lang.Override
-  public long getUpdatedAt() {
-    return updatedAt_;
+  public com.google.protobuf.Timestamp getUpdatedAt() {
+    return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+    return getUpdatedAt();
   }
 
   private byte memoizedIsInitialized = -1;
@@ -222,11 +268,11 @@ private static final long serialVersionUID = 0L;
     if (!getSourceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, source_);
     }
-    if (createdAt_ != 0L) {
-      output.writeUInt64(3, createdAt_);
+    if (createdAt_ != null) {
+      output.writeMessage(3, getCreatedAt());
     }
-    if (updatedAt_ != 0L) {
-      output.writeUInt64(4, updatedAt_);
+    if (updatedAt_ != null) {
+      output.writeMessage(4, getUpdatedAt());
     }
     unknownFields.writeTo(output);
   }
@@ -243,13 +289,13 @@ private static final long serialVersionUID = 0L;
     if (!getSourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, source_);
     }
-    if (createdAt_ != 0L) {
+    if (createdAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(3, createdAt_);
+        .computeMessageSize(3, getCreatedAt());
     }
-    if (updatedAt_ != 0L) {
+    if (updatedAt_ != null) {
       size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(4, updatedAt_);
+        .computeMessageSize(4, getUpdatedAt());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -270,10 +316,16 @@ private static final long serialVersionUID = 0L;
         .equals(other.getId())) return false;
     if (!getSource()
         .equals(other.getSource())) return false;
-    if (getCreatedAt()
-        != other.getCreatedAt()) return false;
-    if (getUpdatedAt()
-        != other.getUpdatedAt()) return false;
+    if (hasCreatedAt() != other.hasCreatedAt()) return false;
+    if (hasCreatedAt()) {
+      if (!getCreatedAt()
+          .equals(other.getCreatedAt())) return false;
+    }
+    if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+    if (hasUpdatedAt()) {
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
+    }
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -289,12 +341,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getId().hashCode();
     hash = (37 * hash) + SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getSource().hashCode();
-    hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getCreatedAt());
-    hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getUpdatedAt());
+    if (hasCreatedAt()) {
+      hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedAt().hashCode();
+    }
+    if (hasUpdatedAt()) {
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -432,10 +486,18 @@ private static final long serialVersionUID = 0L;
 
       source_ = "";
 
-      createdAt_ = 0L;
-
-      updatedAt_ = 0L;
-
+      if (createdAtBuilder_ == null) {
+        createdAt_ = null;
+      } else {
+        createdAt_ = null;
+        createdAtBuilder_ = null;
+      }
+      if (updatedAtBuilder_ == null) {
+        updatedAt_ = null;
+      } else {
+        updatedAt_ = null;
+        updatedAtBuilder_ = null;
+      }
       return this;
     }
 
@@ -464,8 +526,16 @@ private static final long serialVersionUID = 0L;
       com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile result = new com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile(this);
       result.id_ = id_;
       result.source_ = source_;
-      result.createdAt_ = createdAt_;
-      result.updatedAt_ = updatedAt_;
+      if (createdAtBuilder_ == null) {
+        result.createdAt_ = createdAt_;
+      } else {
+        result.createdAt_ = createdAtBuilder_.build();
+      }
+      if (updatedAtBuilder_ == null) {
+        result.updatedAt_ = updatedAt_;
+      } else {
+        result.updatedAt_ = updatedAtBuilder_.build();
+      }
       onBuilt();
       return result;
     }
@@ -522,11 +592,11 @@ private static final long serialVersionUID = 0L;
         source_ = other.source_;
         onChanged();
       }
-      if (other.getCreatedAt() != 0L) {
-        setCreatedAt(other.getCreatedAt());
+      if (other.hasCreatedAt()) {
+        mergeCreatedAt(other.getCreatedAt());
       }
-      if (other.getUpdatedAt() != 0L) {
-        setUpdatedAt(other.getUpdatedAt());
+      if (other.hasUpdatedAt()) {
+        mergeUpdatedAt(other.getUpdatedAt());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -709,66 +779,242 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private long createdAt_ ;
+    private com.google.protobuf.Timestamp createdAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
     /**
-     * <code>uint64 created_at = 3;</code>
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     * @return Whether the createdAt field is set.
+     */
+    public boolean hasCreatedAt() {
+      return createdAtBuilder_ != null || createdAt_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
      * @return The createdAt.
      */
-    @java.lang.Override
-    public long getCreatedAt() {
-      return createdAt_;
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      if (createdAtBuilder_ == null) {
+        return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      } else {
+        return createdAtBuilder_.getMessage();
+      }
     }
     /**
-     * <code>uint64 created_at = 3;</code>
-     * @param value The createdAt to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
      */
-    public Builder setCreatedAt(long value) {
-      
-      createdAt_ = value;
-      onChanged();
+    public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        createdAt_ = value;
+        onChanged();
+      } else {
+        createdAtBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>uint64 created_at = 3;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public Builder setCreatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (createdAtBuilder_ == null) {
+        createdAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        createdAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+      if (createdAtBuilder_ == null) {
+        if (createdAt_ != null) {
+          createdAt_ =
+            com.google.protobuf.Timestamp.newBuilder(createdAt_).mergeFrom(value).buildPartial();
+        } else {
+          createdAt_ = value;
+        }
+        onChanged();
+      } else {
+        createdAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
      */
     public Builder clearCreatedAt() {
-      
-      createdAt_ = 0L;
-      onChanged();
+      if (createdAtBuilder_ == null) {
+        createdAt_ = null;
+        onChanged();
+      } else {
+        createdAt_ = null;
+        createdAtBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+      
+      onChanged();
+      return getCreatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      if (createdAtBuilder_ != null) {
+        return createdAtBuilder_.getMessageOrBuilder();
+      } else {
+        return createdAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getCreatedAtFieldBuilder() {
+      if (createdAtBuilder_ == null) {
+        createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getCreatedAt(),
+                getParentForChildren(),
+                isClean());
+        createdAt_ = null;
+      }
+      return createdAtBuilder_;
     }
 
-    private long updatedAt_ ;
+    private com.google.protobuf.Timestamp updatedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
     /**
-     * <code>uint64 updated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     * @return Whether the updatedAt field is set.
+     */
+    public boolean hasUpdatedAt() {
+      return updatedAtBuilder_ != null || updatedAt_ != null;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
      * @return The updatedAt.
      */
-    @java.lang.Override
-    public long getUpdatedAt() {
-      return updatedAt_;
+    public com.google.protobuf.Timestamp getUpdatedAt() {
+      if (updatedAtBuilder_ == null) {
+        return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+      } else {
+        return updatedAtBuilder_.getMessage();
+      }
     }
     /**
-     * <code>uint64 updated_at = 4;</code>
-     * @param value The updatedAt to set.
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
      */
-    public Builder setUpdatedAt(long value) {
-      
-      updatedAt_ = value;
-      onChanged();
+    public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
+      if (updatedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updatedAt_ = value;
+        onChanged();
+      } else {
+        updatedAtBuilder_.setMessage(value);
+      }
+
       return this;
     }
     /**
-     * <code>uint64 updated_at = 4;</code>
-     * @return This builder for chaining.
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    public Builder setUpdatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updatedAtBuilder_ == null) {
+        updatedAt_ = builderForValue.build();
+        onChanged();
+      } else {
+        updatedAtBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
+      if (updatedAtBuilder_ == null) {
+        if (updatedAt_ != null) {
+          updatedAt_ =
+            com.google.protobuf.Timestamp.newBuilder(updatedAt_).mergeFrom(value).buildPartial();
+        } else {
+          updatedAt_ = value;
+        }
+        onChanged();
+      } else {
+        updatedAtBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
      */
     public Builder clearUpdatedAt() {
-      
-      updatedAt_ = 0L;
-      onChanged();
+      if (updatedAtBuilder_ == null) {
+        updatedAt_ = null;
+        onChanged();
+      } else {
+        updatedAt_ = null;
+        updatedAtBuilder_ = null;
+      }
+
       return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
+      
+      onChanged();
+      return getUpdatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+      if (updatedAtBuilder_ != null) {
+        return updatedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return updatedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getUpdatedAtFieldBuilder() {
+      if (updatedAtBuilder_ == null) {
+        updatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUpdatedAt(),
+                getParentForChildren(),
+                isClean());
+        updatedAt_ = null;
+      }
+      return updatedAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
