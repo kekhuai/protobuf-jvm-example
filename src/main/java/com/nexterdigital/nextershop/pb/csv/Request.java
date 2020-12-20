@@ -16,9 +16,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private Request() {
+    refId_ = "";
     name_ = "";
     payload_ = java.util.Collections.emptyList();
-    id_ = "";
   }
 
   @java.lang.Override
@@ -55,22 +55,22 @@ private static final long serialVersionUID = 0L;
           case 10: {
             java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
+            refId_ = s;
             break;
           }
           case 18: {
+            java.lang.String s = input.readStringRequireUtf8();
+
+            name_ = s;
+            break;
+          }
+          case 26: {
             if (!((mutable_bitField0_ & 0x00000001) != 0)) {
               payload_ = new java.util.ArrayList<com.nexterdigital.nextershop.pb.csv.Payload>();
               mutable_bitField0_ |= 0x00000001;
             }
             payload_.add(
                 input.readMessage(com.nexterdigital.nextershop.pb.csv.Payload.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            id_ = s;
             break;
           }
           default: {
@@ -108,10 +108,48 @@ private static final long serialVersionUID = 0L;
             com.nexterdigital.nextershop.pb.csv.Request.class, com.nexterdigital.nextershop.pb.csv.Request.Builder.class);
   }
 
-  public static final int NAME_FIELD_NUMBER = 1;
+  public static final int REF_ID_FIELD_NUMBER = 1;
+  private volatile java.lang.Object refId_;
+  /**
+   * <code>string ref_id = 1;</code>
+   * @return The refId.
+   */
+  @java.lang.Override
+  public java.lang.String getRefId() {
+    java.lang.Object ref = refId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      refId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string ref_id = 1;</code>
+   * @return The bytes for refId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRefIdBytes() {
+    java.lang.Object ref = refId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      refId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
-   * <code>string name = 1;</code>
+   * <code>string name = 2;</code>
    * @return The name.
    */
   @java.lang.Override
@@ -128,7 +166,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string name = 1;</code>
+   * <code>string name = 2;</code>
    * @return The bytes for name.
    */
   @java.lang.Override
@@ -146,17 +184,17 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int PAYLOAD_FIELD_NUMBER = 2;
+  public static final int PAYLOAD_FIELD_NUMBER = 3;
   private java.util.List<com.nexterdigital.nextershop.pb.csv.Payload> payload_;
   /**
-   * <code>repeated .csv.v1.Payload payload = 2;</code>
+   * <code>repeated .csv.v1.Payload payload = 3;</code>
    */
   @java.lang.Override
   public java.util.List<com.nexterdigital.nextershop.pb.csv.Payload> getPayloadList() {
     return payload_;
   }
   /**
-   * <code>repeated .csv.v1.Payload payload = 2;</code>
+   * <code>repeated .csv.v1.Payload payload = 3;</code>
    */
   @java.lang.Override
   public java.util.List<? extends com.nexterdigital.nextershop.pb.csv.PayloadOrBuilder> 
@@ -164,64 +202,26 @@ private static final long serialVersionUID = 0L;
     return payload_;
   }
   /**
-   * <code>repeated .csv.v1.Payload payload = 2;</code>
+   * <code>repeated .csv.v1.Payload payload = 3;</code>
    */
   @java.lang.Override
   public int getPayloadCount() {
     return payload_.size();
   }
   /**
-   * <code>repeated .csv.v1.Payload payload = 2;</code>
+   * <code>repeated .csv.v1.Payload payload = 3;</code>
    */
   @java.lang.Override
   public com.nexterdigital.nextershop.pb.csv.Payload getPayload(int index) {
     return payload_.get(index);
   }
   /**
-   * <code>repeated .csv.v1.Payload payload = 2;</code>
+   * <code>repeated .csv.v1.Payload payload = 3;</code>
    */
   @java.lang.Override
   public com.nexterdigital.nextershop.pb.csv.PayloadOrBuilder getPayloadOrBuilder(
       int index) {
     return payload_.get(index);
-  }
-
-  public static final int ID_FIELD_NUMBER = 3;
-  private volatile java.lang.Object id_;
-  /**
-   * <code>string id = 3;</code>
-   * @return The id.
-   */
-  @java.lang.Override
-  public java.lang.String getId() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      id_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string id = 3;</code>
-   * @return The bytes for id.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getIdBytes() {
-    java.lang.Object ref = id_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      id_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -238,14 +238,14 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output)
                       throws java.io.IOException {
+    if (!getRefIdBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, refId_);
+    }
     if (!getNameBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
     }
     for (int i = 0; i < payload_.size(); i++) {
-      output.writeMessage(2, payload_.get(i));
-    }
-    if (!getIdBytes().isEmpty()) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, id_);
+      output.writeMessage(3, payload_.get(i));
     }
     unknownFields.writeTo(output);
   }
@@ -256,15 +256,15 @@ private static final long serialVersionUID = 0L;
     if (size != -1) return size;
 
     size = 0;
+    if (!getRefIdBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, refId_);
+    }
     if (!getNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     for (int i = 0; i < payload_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, payload_.get(i));
-    }
-    if (!getIdBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, id_);
+        .computeMessageSize(3, payload_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -281,12 +281,12 @@ private static final long serialVersionUID = 0L;
     }
     com.nexterdigital.nextershop.pb.csv.Request other = (com.nexterdigital.nextershop.pb.csv.Request) obj;
 
+    if (!getRefId()
+        .equals(other.getRefId())) return false;
     if (!getName()
         .equals(other.getName())) return false;
     if (!getPayloadList()
         .equals(other.getPayloadList())) return false;
-    if (!getId()
-        .equals(other.getId())) return false;
     if (!unknownFields.equals(other.unknownFields)) return false;
     return true;
   }
@@ -298,14 +298,14 @@ private static final long serialVersionUID = 0L;
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + REF_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRefId().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     if (getPayloadCount() > 0) {
       hash = (37 * hash) + PAYLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getPayloadList().hashCode();
     }
-    hash = (37 * hash) + ID_FIELD_NUMBER;
-    hash = (53 * hash) + getId().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -440,6 +440,8 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      refId_ = "";
+
       name_ = "";
 
       if (payloadBuilder_ == null) {
@@ -448,8 +450,6 @@ private static final long serialVersionUID = 0L;
       } else {
         payloadBuilder_.clear();
       }
-      id_ = "";
-
       return this;
     }
 
@@ -477,6 +477,7 @@ private static final long serialVersionUID = 0L;
     public com.nexterdigital.nextershop.pb.csv.Request buildPartial() {
       com.nexterdigital.nextershop.pb.csv.Request result = new com.nexterdigital.nextershop.pb.csv.Request(this);
       int from_bitField0_ = bitField0_;
+      result.refId_ = refId_;
       result.name_ = name_;
       if (payloadBuilder_ == null) {
         if (((bitField0_ & 0x00000001) != 0)) {
@@ -487,7 +488,6 @@ private static final long serialVersionUID = 0L;
       } else {
         result.payload_ = payloadBuilder_.build();
       }
-      result.id_ = id_;
       onBuilt();
       return result;
     }
@@ -536,6 +536,10 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.nexterdigital.nextershop.pb.csv.Request other) {
       if (other == com.nexterdigital.nextershop.pb.csv.Request.getDefaultInstance()) return this;
+      if (!other.getRefId().isEmpty()) {
+        refId_ = other.refId_;
+        onChanged();
+      }
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -565,10 +569,6 @@ private static final long serialVersionUID = 0L;
             payloadBuilder_.addAllMessages(other.payload_);
           }
         }
-      }
-      if (!other.getId().isEmpty()) {
-        id_ = other.id_;
-        onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -600,9 +600,85 @@ private static final long serialVersionUID = 0L;
     }
     private int bitField0_;
 
+    private java.lang.Object refId_ = "";
+    /**
+     * <code>string ref_id = 1;</code>
+     * @return The refId.
+     */
+    public java.lang.String getRefId() {
+      java.lang.Object ref = refId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        refId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string ref_id = 1;</code>
+     * @return The bytes for refId.
+     */
+    public com.google.protobuf.ByteString
+        getRefIdBytes() {
+      java.lang.Object ref = refId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        refId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string ref_id = 1;</code>
+     * @param value The refId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefId(
+        java.lang.String value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  
+      refId_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ref_id = 1;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRefId() {
+      
+      refId_ = getDefaultInstance().getRefId();
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ref_id = 1;</code>
+     * @param value The bytes for refId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRefIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+      
+      refId_ = value;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @return The name.
      */
     public java.lang.String getName() {
@@ -618,7 +694,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @return The bytes for name.
      */
     public com.google.protobuf.ByteString
@@ -635,7 +711,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @param value The name to set.
      * @return This builder for chaining.
      */
@@ -650,7 +726,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @return This builder for chaining.
      */
     public Builder clearName() {
@@ -660,7 +736,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>string name = 1;</code>
+     * <code>string name = 2;</code>
      * @param value The bytes for name to set.
      * @return This builder for chaining.
      */
@@ -689,7 +765,7 @@ private static final long serialVersionUID = 0L;
         com.nexterdigital.nextershop.pb.csv.Payload, com.nexterdigital.nextershop.pb.csv.Payload.Builder, com.nexterdigital.nextershop.pb.csv.PayloadOrBuilder> payloadBuilder_;
 
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public java.util.List<com.nexterdigital.nextershop.pb.csv.Payload> getPayloadList() {
       if (payloadBuilder_ == null) {
@@ -699,7 +775,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public int getPayloadCount() {
       if (payloadBuilder_ == null) {
@@ -709,7 +785,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public com.nexterdigital.nextershop.pb.csv.Payload getPayload(int index) {
       if (payloadBuilder_ == null) {
@@ -719,7 +795,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder setPayload(
         int index, com.nexterdigital.nextershop.pb.csv.Payload value) {
@@ -736,7 +812,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder setPayload(
         int index, com.nexterdigital.nextershop.pb.csv.Payload.Builder builderForValue) {
@@ -750,7 +826,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder addPayload(com.nexterdigital.nextershop.pb.csv.Payload value) {
       if (payloadBuilder_ == null) {
@@ -766,7 +842,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder addPayload(
         int index, com.nexterdigital.nextershop.pb.csv.Payload value) {
@@ -783,7 +859,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder addPayload(
         com.nexterdigital.nextershop.pb.csv.Payload.Builder builderForValue) {
@@ -797,7 +873,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder addPayload(
         int index, com.nexterdigital.nextershop.pb.csv.Payload.Builder builderForValue) {
@@ -811,7 +887,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder addAllPayload(
         java.lang.Iterable<? extends com.nexterdigital.nextershop.pb.csv.Payload> values) {
@@ -826,7 +902,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder clearPayload() {
       if (payloadBuilder_ == null) {
@@ -839,7 +915,7 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public Builder removePayload(int index) {
       if (payloadBuilder_ == null) {
@@ -852,14 +928,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public com.nexterdigital.nextershop.pb.csv.Payload.Builder getPayloadBuilder(
         int index) {
       return getPayloadFieldBuilder().getBuilder(index);
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public com.nexterdigital.nextershop.pb.csv.PayloadOrBuilder getPayloadOrBuilder(
         int index) {
@@ -869,7 +945,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public java.util.List<? extends com.nexterdigital.nextershop.pb.csv.PayloadOrBuilder> 
          getPayloadOrBuilderList() {
@@ -880,14 +956,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public com.nexterdigital.nextershop.pb.csv.Payload.Builder addPayloadBuilder() {
       return getPayloadFieldBuilder().addBuilder(
           com.nexterdigital.nextershop.pb.csv.Payload.getDefaultInstance());
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public com.nexterdigital.nextershop.pb.csv.Payload.Builder addPayloadBuilder(
         int index) {
@@ -895,7 +971,7 @@ private static final long serialVersionUID = 0L;
           index, com.nexterdigital.nextershop.pb.csv.Payload.getDefaultInstance());
     }
     /**
-     * <code>repeated .csv.v1.Payload payload = 2;</code>
+     * <code>repeated .csv.v1.Payload payload = 3;</code>
      */
     public java.util.List<com.nexterdigital.nextershop.pb.csv.Payload.Builder> 
          getPayloadBuilderList() {
@@ -914,82 +990,6 @@ private static final long serialVersionUID = 0L;
         payload_ = null;
       }
       return payloadBuilder_;
-    }
-
-    private java.lang.Object id_ = "";
-    /**
-     * <code>string id = 3;</code>
-     * @return The id.
-     */
-    public java.lang.String getId() {
-      java.lang.Object ref = id_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        id_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string id = 3;</code>
-     * @return The bytes for id.
-     */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
-      java.lang.Object ref = id_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        id_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string id = 3;</code>
-     * @param value The id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setId(
-        java.lang.String value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  
-      id_ = value;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string id = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearId() {
-      
-      id_ = getDefaultInstance().getId();
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string id = 3;</code>
-     * @param value The bytes for id to set.
-     * @return This builder for chaining.
-     */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
-      id_ = value;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
