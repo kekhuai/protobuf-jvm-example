@@ -42,4 +42,16 @@ public interface RequestOrBuilder extends
    */
   com.nexterdigital.nextershop.pb.csv.PayloadOrBuilder getPayloadOrBuilder(
       int index);
+
+  /**
+   * <code>string id = 3;</code>
+   * @return The id.
+   */
+  java.lang.String getId();
+  /**
+   * <code>string id = 3;</code>
+   * @return The bytes for id.
+   */
+  com.google.protobuf.ByteString
+      getIdBytes();
 }

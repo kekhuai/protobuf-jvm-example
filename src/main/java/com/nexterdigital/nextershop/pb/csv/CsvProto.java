@@ -36,12 +36,12 @@ public final class CsvProto {
       "\n\tcsv.proto\022\006csv.v1\032 google/protobuf/des" +
       "criptor.proto\032\rproduct.proto\032\023uploaded_f" +
       "ile.proto\"9\n\007Payload\022&\n\007product\030\001 \001(\0132\023." +
-      "product.v1.ProductH\000B\006\n\004data\"9\n\007Request\022" +
+      "product.v1.ProductH\000B\006\n\004data\"E\n\007Request\022" +
       "\014\n\004name\030\001 \001(\t\022 \n\007payload\030\002 \003(\0132\017.csv.v1." +
-      "Payload2J\n\nCsvService\022<\n\010generate\022\017.csv." +
-      "v1.Request\032\035.uploadedfile.v1.UploadedFil" +
-      "e\"\000B1\n#com.nexterdigital.nextershop.pb.c" +
-      "svB\010CsvProtoP\001b\006proto3"
+      "Payload\022\n\n\002id\030\003 \001(\t2J\n\nCsvService\022<\n\010gen" +
+      "erate\022\017.csv.v1.Request\032\035.uploadedfile.v1" +
+      ".UploadedFile\"\000B1\n#com.nexterdigital.nex" +
+      "tershop.pb.csvB\010CsvProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -61,7 +61,7 @@ public final class CsvProto {
     internal_static_csv_v1_Request_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_csv_v1_Request_descriptor,
-        new java.lang.String[] { "Name", "Payload", });
+        new java.lang.String[] { "Name", "Payload", "Id", });
     com.google.protobuf.DescriptorProtos.getDescriptor();
     com.nexterdigital.nextershop.pb.product.ProductProto.getDescriptor();
     com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileProto.getDescriptor();
