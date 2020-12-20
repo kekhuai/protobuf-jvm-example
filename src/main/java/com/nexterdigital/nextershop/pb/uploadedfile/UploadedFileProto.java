@@ -20,6 +20,11 @@ public final class UploadedFileProto {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_uploadedfile_v1_UploadedFile_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_uploadedfile_v1_Request_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_uploadedfile_v1_Request_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_uploadedfile_v1_Response_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -39,12 +44,15 @@ public final class UploadedFileProto {
       "\002id\030\001 \001(\t\022\016\n\006source\030\002 \001(\t\022.\n\ncreated_at\030" +
       "\003 \001(\0132\032.google.protobuf.Timestamp\022.\n\nupd" +
       "ated_at\030\004 \001(\0132\032.google.protobuf.Timestam" +
-      "p\"A\n\010Response\0225\n\016uploaded_files\030\001 \003(\0132\035." +
-      "uploadedfile.v1.UploadedFile2R\n\023Uploaded" +
-      "FileService\022;\n\004init\022\026.google.protobuf.Em" +
-      "pty\032\031.uploadedfile.v1.Response\"\000BC\n,com." +
-      "nexterdigital.nextershop.pb.uploadedfile" +
-      "B\021UploadedFileProtoP\001b\006proto3"
+      "p\"\031\n\007Request\022\016\n\006source\030\001 \001(\t\"A\n\010Response" +
+      "\0225\n\016uploaded_files\030\001 \003(\0132\035.uploadedfile." +
+      "v1.UploadedFile2\232\001\n\023UploadedFileService\022" +
+      "C\n\006create\022\030.uploadedfile.v1.Request\032\035.up" +
+      "loadedfile.v1.UploadedFile\"\000\022>\n\007readAll\022" +
+      "\026.google.protobuf.Empty\032\031.uploadedfile.v" +
+      "1.Response\"\000BC\n,com.nexterdigital.nexter" +
+      "shop.pb.uploadedfileB\021UploadedFileProtoP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -58,8 +66,14 @@ public final class UploadedFileProto {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_uploadedfile_v1_UploadedFile_descriptor,
         new java.lang.String[] { "Id", "Source", "CreatedAt", "UpdatedAt", });
-    internal_static_uploadedfile_v1_Response_descriptor =
+    internal_static_uploadedfile_v1_Request_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_uploadedfile_v1_Request_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_uploadedfile_v1_Request_descriptor,
+        new java.lang.String[] { "Source", });
+    internal_static_uploadedfile_v1_Response_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_uploadedfile_v1_Response_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_uploadedfile_v1_Response_descriptor,

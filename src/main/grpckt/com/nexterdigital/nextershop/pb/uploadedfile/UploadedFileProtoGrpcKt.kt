@@ -10,11 +10,14 @@ import io.grpc.MethodDescriptor
 import io.grpc.ServerServiceDefinition
 import io.grpc.ServerServiceDefinition.builder
 import io.grpc.ServiceDescriptor
+import io.grpc.Status
 import io.grpc.Status.UNIMPLEMENTED
 import io.grpc.StatusException
 import io.grpc.kotlin.AbstractCoroutineServerImpl
 import io.grpc.kotlin.AbstractCoroutineStub
+import io.grpc.kotlin.ClientCalls
 import io.grpc.kotlin.ClientCalls.unaryRpc
+import io.grpc.kotlin.ServerCalls
 import io.grpc.kotlin.ServerCalls.unaryServerMethodDefinition
 import io.grpc.kotlin.StubFor
 import kotlin.coroutines.CoroutineContext
@@ -30,9 +33,13 @@ object UploadedFileServiceGrpcKt {
   val serviceDescriptor: ServiceDescriptor
     get() = UploadedFileServiceGrpc.getServiceDescriptor()
 
-  val initMethod: MethodDescriptor<Empty, Response>
+  val createMethod: MethodDescriptor<Request, UploadedFile>
     @JvmStatic
-    get() = UploadedFileServiceGrpc.getInitMethod()
+    get() = UploadedFileServiceGrpc.getCreateMethod()
+
+  val readAllMethod: MethodDescriptor<Empty, Response>
+    @JvmStatic
+    get() = UploadedFileServiceGrpc.getReadAllMethod()
 
   /**
    * A stub for issuing RPCs to a(n) uploadedfile.v1.UploadedFileService service as suspending
@@ -48,8 +55,7 @@ object UploadedFileServiceGrpcKt {
 
     /**
      * Executes this RPC and returns the response message, suspending until the RPC completes
-     * with [`Status.OK`][io.grpc.Status].  If the RPC completes with another status, a
-     * corresponding
+     * with [`Status.OK`][Status].  If the RPC completes with another status, a corresponding
      * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
      * with the corresponding exception as a cause.
      *
@@ -57,9 +63,26 @@ object UploadedFileServiceGrpcKt {
      *
      * @return The single response from the server.
      */
-    suspend fun init(request: Empty): Response = unaryRpc(
+    suspend fun create(request: Request): UploadedFile = unaryRpc(
       channel,
-      UploadedFileServiceGrpc.getInitMethod(),
+      UploadedFileServiceGrpc.getCreateMethod(),
+      request,
+      callOptions,
+      Metadata()
+    )
+    /**
+     * Executes this RPC and returns the response message, suspending until the RPC completes
+     * with [`Status.OK`][Status].  If the RPC completes with another status, a corresponding
+     * [StatusException] is thrown.  If this coroutine is cancelled, the RPC is also cancelled
+     * with the corresponding exception as a cause.
+     *
+     * @param request The request message to send to the server.
+     *
+     * @return The single response from the server.
+     */
+    suspend fun readAll(request: Empty): Response = unaryRpc(
+      channel,
+      UploadedFileServiceGrpc.getReadAllMethod(),
       request,
       callOptions,
       Metadata()
@@ -73,24 +96,43 @@ object UploadedFileServiceGrpcKt {
     coroutineContext: CoroutineContext = EmptyCoroutineContext
   ) : AbstractCoroutineServerImpl(coroutineContext) {
     /**
-     * Returns the response to an RPC for uploadedfile.v1.UploadedFileService.init.
+     * Returns the response to an RPC for uploadedfile.v1.UploadedFileService.create.
      *
      * If this method fails with a [StatusException], the RPC will fail with the corresponding
-     * [io.grpc.Status].  If this method fails with a [java.util.concurrent.CancellationException],
-     * the RPC will fail
+     * [Status].  If this method fails with a [java.util.concurrent.CancellationException], the RPC
+     * will fail
      * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
      * fail with `Status.UNKNOWN` with the exception as a cause.
      *
      * @param request The request from the client.
      */
-    open suspend fun init(request: Empty): Response = throw
-        StatusException(UNIMPLEMENTED.withDescription("Method uploadedfile.v1.UploadedFileService.init is unimplemented"))
+    open suspend fun create(request: Request): UploadedFile = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method uploadedfile.v1.UploadedFileService.create is unimplemented"))
+
+    /**
+     * Returns the response to an RPC for uploadedfile.v1.UploadedFileService.readAll.
+     *
+     * If this method fails with a [StatusException], the RPC will fail with the corresponding
+     * [Status].  If this method fails with a [java.util.concurrent.CancellationException], the RPC
+     * will fail
+     * with status `Status.CANCELLED`.  If this method fails for any other reason, the RPC will
+     * fail with `Status.UNKNOWN` with the exception as a cause.
+     *
+     * @param request The request from the client.
+     */
+    open suspend fun readAll(request: Empty): Response = throw
+        StatusException(UNIMPLEMENTED.withDescription("Method uploadedfile.v1.UploadedFileService.readAll is unimplemented"))
 
     final override fun bindService(): ServerServiceDefinition = builder(getServiceDescriptor())
       .addMethod(unaryServerMethodDefinition(
       context = this.context,
-      descriptor = UploadedFileServiceGrpc.getInitMethod(),
-      implementation = ::init
+      descriptor = UploadedFileServiceGrpc.getCreateMethod(),
+      implementation = ::create
+    ))
+      .addMethod(unaryServerMethodDefinition(
+      context = this.context,
+      descriptor = UploadedFileServiceGrpc.getReadAllMethod(),
+      implementation = ::readAll
     )).build()
   }
 }
