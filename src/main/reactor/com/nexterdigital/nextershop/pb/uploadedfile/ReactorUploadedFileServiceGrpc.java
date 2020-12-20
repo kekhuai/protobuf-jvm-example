@@ -35,31 +35,43 @@ public final class ReactorUploadedFileServiceGrpc {
             return new ReactorUploadedFileServiceStub(channel, callOptions);
         }
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> create(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Request> reactorRequest) {
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> create(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.CreateRequest> reactorRequest) {
             return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactorRequest, delegateStub::create, getCallOptions());
         }
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Response> readAll(reactor.core.publisher.Mono<com.google.protobuf.Empty> reactorRequest) {
-            return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactorRequest, delegateStub::readAll, getCallOptions());
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Response> readBy(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest> reactorRequest) {
+            return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactorRequest, delegateStub::readBy, getCallOptions());
         }
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> create(com.nexterdigital.nextershop.pb.uploadedfile.Request reactorRequest) {
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> readOne(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest> reactorRequest) {
+            return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactorRequest, delegateStub::readOne, getCallOptions());
+        }
+
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> create(com.nexterdigital.nextershop.pb.uploadedfile.CreateRequest reactorRequest) {
            return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactor.core.publisher.Mono.just(reactorRequest), delegateStub::create, getCallOptions());
         }
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Response> readAll(com.google.protobuf.Empty reactorRequest) {
-           return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactor.core.publisher.Mono.just(reactorRequest), delegateStub::readAll, getCallOptions());
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Response> readBy(com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest reactorRequest) {
+           return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactor.core.publisher.Mono.just(reactorRequest), delegateStub::readBy, getCallOptions());
+        }
+
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> readOne(com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest reactorRequest) {
+           return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactor.core.publisher.Mono.just(reactorRequest), delegateStub::readOne, getCallOptions());
         }
 
     }
 
     public static abstract class UploadedFileServiceImplBase implements io.grpc.BindableService {
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> create(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Request> request) {
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> create(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.CreateRequest> request) {
             throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
         }
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Response> readAll(reactor.core.publisher.Mono<com.google.protobuf.Empty> request) {
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.Response> readBy(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest> request) {
+            throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
+        }
+
+        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> readOne(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest> request) {
             throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
         }
 
@@ -69,16 +81,23 @@ public final class ReactorUploadedFileServiceGrpc {
                             com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileServiceGrpc.getCreateMethod(),
                             asyncUnaryCall(
                                     new MethodHandlers<
-                                            com.nexterdigital.nextershop.pb.uploadedfile.Request,
+                                            com.nexterdigital.nextershop.pb.uploadedfile.CreateRequest,
                                             com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>(
                                             this, METHODID_CREATE)))
                     .addMethod(
-                            com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileServiceGrpc.getReadAllMethod(),
+                            com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileServiceGrpc.getReadByMethod(),
                             asyncUnaryCall(
                                     new MethodHandlers<
-                                            com.google.protobuf.Empty,
+                                            com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest,
                                             com.nexterdigital.nextershop.pb.uploadedfile.Response>(
-                                            this, METHODID_READ_ALL)))
+                                            this, METHODID_READ_BY)))
+                    .addMethod(
+                            com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileServiceGrpc.getReadOneMethod(),
+                            asyncUnaryCall(
+                                    new MethodHandlers<
+                                            com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest,
+                                            com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>(
+                                            this, METHODID_READ_ONE)))
                     .build();
         }
 
@@ -89,7 +108,8 @@ public final class ReactorUploadedFileServiceGrpc {
     }
 
     public static final int METHODID_CREATE = 0;
-    public static final int METHODID_READ_ALL = 1;
+    public static final int METHODID_READ_BY = 1;
+    public static final int METHODID_READ_ONE = 2;
 
     private static final class MethodHandlers<Req, Resp> implements
             io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -109,14 +129,19 @@ public final class ReactorUploadedFileServiceGrpc {
         public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
             switch (methodId) {
                 case METHODID_CREATE:
-                    com.salesforce.reactorgrpc.stub.ServerCalls.oneToOne((com.nexterdigital.nextershop.pb.uploadedfile.Request) request,
+                    com.salesforce.reactorgrpc.stub.ServerCalls.oneToOne((com.nexterdigital.nextershop.pb.uploadedfile.CreateRequest) request,
                             (io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>) responseObserver,
                             serviceImpl::create);
                     break;
-                case METHODID_READ_ALL:
-                    com.salesforce.reactorgrpc.stub.ServerCalls.oneToOne((com.google.protobuf.Empty) request,
+                case METHODID_READ_BY:
+                    com.salesforce.reactorgrpc.stub.ServerCalls.oneToOne((com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest) request,
                             (io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.Response>) responseObserver,
-                            serviceImpl::readAll);
+                            serviceImpl::readBy);
+                    break;
+                case METHODID_READ_ONE:
+                    com.salesforce.reactorgrpc.stub.ServerCalls.oneToOne((com.nexterdigital.nextershop.pb.uploadedfile.QueryRequest) request,
+                            (io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>) responseObserver,
+                            serviceImpl::readOne);
                     break;
                 default:
                     throw new java.lang.AssertionError();
