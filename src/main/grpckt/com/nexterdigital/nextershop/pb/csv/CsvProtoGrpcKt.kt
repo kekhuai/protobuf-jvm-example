@@ -1,7 +1,7 @@
 package com.nexterdigital.nextershop.pb.csv
 
+import com.google.protobuf.Empty
 import com.nexterdigital.nextershop.pb.csv.CsvServiceGrpc.getServiceDescriptor
-import com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile
 import io.grpc.CallOptions
 import io.grpc.CallOptions.DEFAULT
 import io.grpc.Channel
@@ -30,7 +30,7 @@ object CsvServiceGrpcKt {
   val serviceDescriptor: ServiceDescriptor
     get() = CsvServiceGrpc.getServiceDescriptor()
 
-  val generateMethod: MethodDescriptor<Request, UploadedFile>
+  val generateMethod: MethodDescriptor<Request, Empty>
     @JvmStatic
     get() = CsvServiceGrpc.getGenerateMethod()
 
@@ -56,7 +56,7 @@ object CsvServiceGrpcKt {
      *
      * @return The single response from the server.
      */
-    suspend fun generate(request: Request): UploadedFile = unaryRpc(
+    suspend fun generate(request: Request): Empty = unaryRpc(
       channel,
       CsvServiceGrpc.getGenerateMethod(),
       request,
@@ -81,7 +81,7 @@ object CsvServiceGrpcKt {
      *
      * @param request The request from the client.
      */
-    open suspend fun generate(request: Request): UploadedFile = throw
+    open suspend fun generate(request: Request): Empty = throw
         StatusException(UNIMPLEMENTED.withDescription("Method csv.v1.CsvService.generate is unimplemented"))
 
     final override fun bindService(): ServerServiceDefinition = builder(getServiceDescriptor())

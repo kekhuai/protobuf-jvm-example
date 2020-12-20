@@ -28,28 +28,28 @@ public final class CsvServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   private static volatile io.grpc.MethodDescriptor<com.nexterdigital.nextershop.pb.csv.Request,
-      com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getGenerateMethod;
+      com.google.protobuf.Empty> getGenerateMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "generate",
       requestType = com.nexterdigital.nextershop.pb.csv.Request.class,
-      responseType = com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.class,
+      responseType = com.google.protobuf.Empty.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
   public static io.grpc.MethodDescriptor<com.nexterdigital.nextershop.pb.csv.Request,
-      com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getGenerateMethod() {
-    io.grpc.MethodDescriptor<com.nexterdigital.nextershop.pb.csv.Request, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> getGenerateMethod;
+      com.google.protobuf.Empty> getGenerateMethod() {
+    io.grpc.MethodDescriptor<com.nexterdigital.nextershop.pb.csv.Request, com.google.protobuf.Empty> getGenerateMethod;
     if ((getGenerateMethod = CsvServiceGrpc.getGenerateMethod) == null) {
       synchronized (CsvServiceGrpc.class) {
         if ((getGenerateMethod = CsvServiceGrpc.getGenerateMethod) == null) {
           CsvServiceGrpc.getGenerateMethod = getGenerateMethod =
-              io.grpc.MethodDescriptor.<com.nexterdigital.nextershop.pb.csv.Request, com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>newBuilder()
+              io.grpc.MethodDescriptor.<com.nexterdigital.nextershop.pb.csv.Request, com.google.protobuf.Empty>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "generate"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
                   com.nexterdigital.nextershop.pb.csv.Request.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile.getDefaultInstance()))
+                  com.google.protobuf.Empty.getDefaultInstance()))
               .setSchemaDescriptor(new CsvServiceMethodDescriptorSupplier("generate"))
               .build();
         }
@@ -109,7 +109,7 @@ public final class CsvServiceGrpc {
     /**
      */
     public void generate(com.nexterdigital.nextershop.pb.csv.Request request,
-        io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnimplementedUnaryCall(getGenerateMethod(), responseObserver);
     }
 
@@ -120,7 +120,7 @@ public final class CsvServiceGrpc {
             asyncUnaryCall(
               new MethodHandlers<
                 com.nexterdigital.nextershop.pb.csv.Request,
-                com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>(
+                com.google.protobuf.Empty>(
                   this, METHODID_GENERATE)))
           .build();
     }
@@ -143,7 +143,7 @@ public final class CsvServiceGrpc {
     /**
      */
     public void generate(com.nexterdigital.nextershop.pb.csv.Request request,
-        io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> responseObserver) {
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getGenerateMethod(), getCallOptions()), request, responseObserver);
     }
@@ -165,7 +165,7 @@ public final class CsvServiceGrpc {
 
     /**
      */
-    public com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile generate(com.nexterdigital.nextershop.pb.csv.Request request) {
+    public com.google.protobuf.Empty generate(com.nexterdigital.nextershop.pb.csv.Request request) {
       return blockingUnaryCall(
           getChannel(), getGenerateMethod(), getCallOptions(), request);
     }
@@ -187,7 +187,7 @@ public final class CsvServiceGrpc {
 
     /**
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> generate(
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty> generate(
         com.nexterdigital.nextershop.pb.csv.Request request) {
       return futureUnaryCall(
           getChannel().newCall(getGenerateMethod(), getCallOptions()), request);
@@ -215,7 +215,7 @@ public final class CsvServiceGrpc {
       switch (methodId) {
         case METHODID_GENERATE:
           serviceImpl.generate((com.nexterdigital.nextershop.pb.csv.Request) request,
-              (io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>) responseObserver);
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         default:
           throw new AssertionError();

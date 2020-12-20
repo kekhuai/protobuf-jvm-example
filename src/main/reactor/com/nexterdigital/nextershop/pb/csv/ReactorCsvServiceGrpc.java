@@ -35,11 +35,11 @@ public final class ReactorCsvServiceGrpc {
             return new ReactorCsvServiceStub(channel, callOptions);
         }
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> generate(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.csv.Request> reactorRequest) {
+        public reactor.core.publisher.Mono<com.google.protobuf.Empty> generate(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.csv.Request> reactorRequest) {
             return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactorRequest, delegateStub::generate, getCallOptions());
         }
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> generate(com.nexterdigital.nextershop.pb.csv.Request reactorRequest) {
+        public reactor.core.publisher.Mono<com.google.protobuf.Empty> generate(com.nexterdigital.nextershop.pb.csv.Request reactorRequest) {
            return com.salesforce.reactorgrpc.stub.ClientCalls.oneToOne(reactor.core.publisher.Mono.just(reactorRequest), delegateStub::generate, getCallOptions());
         }
 
@@ -47,7 +47,7 @@ public final class ReactorCsvServiceGrpc {
 
     public static abstract class CsvServiceImplBase implements io.grpc.BindableService {
 
-        public reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile> generate(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.csv.Request> request) {
+        public reactor.core.publisher.Mono<com.google.protobuf.Empty> generate(reactor.core.publisher.Mono<com.nexterdigital.nextershop.pb.csv.Request> request) {
             throw new io.grpc.StatusRuntimeException(io.grpc.Status.UNIMPLEMENTED);
         }
 
@@ -58,7 +58,7 @@ public final class ReactorCsvServiceGrpc {
                             asyncUnaryCall(
                                     new MethodHandlers<
                                             com.nexterdigital.nextershop.pb.csv.Request,
-                                            com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>(
+                                            com.google.protobuf.Empty>(
                                             this, METHODID_GENERATE)))
                     .build();
         }
@@ -90,7 +90,7 @@ public final class ReactorCsvServiceGrpc {
             switch (methodId) {
                 case METHODID_GENERATE:
                     com.salesforce.reactorgrpc.stub.ServerCalls.oneToOne((com.nexterdigital.nextershop.pb.csv.Request) request,
-                            (io.grpc.stub.StreamObserver<com.nexterdigital.nextershop.pb.uploadedfile.UploadedFile>) responseObserver,
+                            (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver,
                             serviceImpl::generate);
                     break;
                 default:

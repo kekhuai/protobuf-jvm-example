@@ -34,21 +34,21 @@ public final class CsvProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\tcsv.proto\022\006csv.v1\032 google/protobuf/des" +
-      "criptor.proto\032\rproduct.proto\032\023uploaded_f" +
-      "ile.proto\"9\n\007Payload\022&\n\007product\030\001 \001(\0132\023." +
-      "product.v1.ProductH\000B\006\n\004data\"I\n\007Request\022" +
-      "\016\n\006ref_id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022 \n\007payload" +
-      "\030\003 \003(\0132\017.csv.v1.Payload2J\n\nCsvService\022<\n" +
-      "\010generate\022\017.csv.v1.Request\032\035.uploadedfil" +
-      "e.v1.UploadedFile\"\000B1\n#com.nexterdigital" +
-      ".nextershop.pb.csvB\010CsvProtoP\001b\006proto3"
+      "criptor.proto\032\033google/protobuf/empty.pro" +
+      "to\032\rproduct.proto\"9\n\007Payload\022&\n\007product\030" +
+      "\001 \001(\0132\023.product.v1.ProductH\000B\006\n\004data\"I\n\007" +
+      "Request\022\016\n\006ref_id\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\022 \n" +
+      "\007payload\030\003 \003(\0132\017.csv.v1.Payload2C\n\nCsvSe" +
+      "rvice\0225\n\010generate\022\017.csv.v1.Request\032\026.goo" +
+      "gle.protobuf.Empty\"\000B1\n#com.nexterdigita" +
+      "l.nextershop.pb.csvB\010CsvProtoP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.protobuf.DescriptorProtos.getDescriptor(),
+          com.google.protobuf.EmptyProto.getDescriptor(),
           com.nexterdigital.nextershop.pb.product.ProductProto.getDescriptor(),
-          com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileProto.getDescriptor(),
         });
     internal_static_csv_v1_Payload_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -63,8 +63,8 @@ public final class CsvProto {
         internal_static_csv_v1_Request_descriptor,
         new java.lang.String[] { "RefId", "Name", "Payload", });
     com.google.protobuf.DescriptorProtos.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
     com.nexterdigital.nextershop.pb.product.ProductProto.getDescriptor();
-    com.nexterdigital.nextershop.pb.uploadedfile.UploadedFileProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
