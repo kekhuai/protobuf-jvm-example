@@ -32,32 +32,44 @@ public interface UploadedFileOrBuilder extends
       getSourceBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * <code>string name = 3;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 3;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
+
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 4;</code>
    * @return Whether the createdAt field is set.
    */
   boolean hasCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * <code>.google.protobuf.Timestamp created_at = 4;</code>
    * @return The createdAt.
    */
   com.google.protobuf.Timestamp getCreatedAt();
   /**
-   * <code>.google.protobuf.Timestamp created_at = 3;</code>
+   * <code>.google.protobuf.Timestamp created_at = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp updated_at = 5;</code>
    * @return Whether the updatedAt field is set.
    */
   boolean hasUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp updated_at = 5;</code>
    * @return The updatedAt.
    */
   com.google.protobuf.Timestamp getUpdatedAt();
   /**
-   * <code>.google.protobuf.Timestamp updated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp updated_at = 5;</code>
    */
   com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
 }

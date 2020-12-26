@@ -18,4 +18,16 @@ public interface CreateRequestOrBuilder extends
    */
   com.google.protobuf.ByteString
       getSourceBytes();
+
+  /**
+   * <code>string name = 2;</code>
+   * @return The name.
+   */
+  java.lang.String getName();
+  /**
+   * <code>string name = 2;</code>
+   * @return The bytes for name.
+   */
+  com.google.protobuf.ByteString
+      getNameBytes();
 }

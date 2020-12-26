@@ -44,22 +44,23 @@ public final class UploadedFileProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023uploaded_file.proto\022\017uploadedfile.v1\032\037" +
-      "google/protobuf/timestamp.proto\"\212\001\n\014Uplo" +
-      "adedFile\022\n\n\002id\030\001 \001(\t\022\016\n\006source\030\002 \001(\t\022.\n\n" +
-      "created_at\030\003 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022.\n\nupdated_at\030\004 \001(\0132\032.google.protob" +
-      "uf.Timestamp\"\037\n\rCreateRequest\022\016\n\006source\030" +
-      "\001 \001(\t\"A\n\010Response\0225\n\016uploaded_files\030\001 \003(" +
-      "\0132\035.uploadedfile.v1.UploadedFile\"\032\n\014Quer" +
-      "yRequest\022\n\n\002id\030\001 \001(\t2\361\001\n\023UploadedFileSer" +
-      "vice\022I\n\006create\022\036.uploadedfile.v1.CreateR" +
-      "equest\032\035.uploadedfile.v1.UploadedFile\"\000\022" +
-      "D\n\006readBy\022\035.uploadedfile.v1.QueryRequest" +
-      "\032\031.uploadedfile.v1.Response\"\000\022I\n\007readOne" +
-      "\022\035.uploadedfile.v1.QueryRequest\032\035.upload" +
-      "edfile.v1.UploadedFile\"\000BC\n,com.nexterdi" +
-      "gital.nextershop.pb.uploadedfileB\021Upload" +
-      "edFileProtoP\001b\006proto3"
+      "google/protobuf/timestamp.proto\"\230\001\n\014Uplo" +
+      "adedFile\022\n\n\002id\030\001 \001(\t\022\016\n\006source\030\002 \001(\t\022\014\n\004" +
+      "name\030\003 \001(\t\022.\n\ncreated_at\030\004 \001(\0132\032.google." +
+      "protobuf.Timestamp\022.\n\nupdated_at\030\005 \001(\0132\032" +
+      ".google.protobuf.Timestamp\"-\n\rCreateRequ" +
+      "est\022\016\n\006source\030\001 \001(\t\022\014\n\004name\030\002 \001(\t\"A\n\010Res" +
+      "ponse\0225\n\016uploaded_files\030\001 \003(\0132\035.uploaded" +
+      "file.v1.UploadedFile\"\032\n\014QueryRequest\022\n\n\002" +
+      "id\030\001 \001(\t2\361\001\n\023UploadedFileService\022I\n\006crea" +
+      "te\022\036.uploadedfile.v1.CreateRequest\032\035.upl" +
+      "oadedfile.v1.UploadedFile\"\000\022D\n\006readBy\022\035." +
+      "uploadedfile.v1.QueryRequest\032\031.uploadedf" +
+      "ile.v1.Response\"\000\022I\n\007readOne\022\035.uploadedf" +
+      "ile.v1.QueryRequest\032\035.uploadedfile.v1.Up" +
+      "loadedFile\"\000BC\n,com.nexterdigital.nexter" +
+      "shop.pb.uploadedfileB\021UploadedFileProtoP" +
+      "\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -71,13 +72,13 @@ public final class UploadedFileProto {
     internal_static_uploadedfile_v1_UploadedFile_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_uploadedfile_v1_UploadedFile_descriptor,
-        new java.lang.String[] { "Id", "Source", "CreatedAt", "UpdatedAt", });
+        new java.lang.String[] { "Id", "Source", "Name", "CreatedAt", "UpdatedAt", });
     internal_static_uploadedfile_v1_CreateRequest_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_uploadedfile_v1_CreateRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_uploadedfile_v1_CreateRequest_descriptor,
-        new java.lang.String[] { "Source", });
+        new java.lang.String[] { "Source", "Name", });
     internal_static_uploadedfile_v1_Response_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_uploadedfile_v1_Response_fieldAccessorTable = new
